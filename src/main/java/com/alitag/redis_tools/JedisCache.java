@@ -42,7 +42,7 @@ public class JedisCache extends RedisExecutor {
 	 * @see #setString(String, String, int)
 	 * @param key
 	 * @param value
-	 * @param timeout
+	 * @param timeout(以秒为单位)。
 	 * @return
 	 */
 	public String set(final String key, final String value, final int timeout) {

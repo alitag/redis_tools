@@ -151,7 +151,9 @@ public abstract class RedisExecutor {
 				while (iter.hasNext()) {
 					Jedis jedis = iter.next();
 					Set<String> keys = jedis.keys(patten);
-					count += jedis.del(keys.toArray(new String[keys.size()]));
+					if (!keys.isEmpty()) {
+						count += jedis.del(keys.toArray(new String[keys.size()]));
+					}
 				}
 				return count;
 			}
